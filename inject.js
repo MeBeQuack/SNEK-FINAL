@@ -10,11 +10,6 @@ document.body.innerHTML+=`<canvas id="canvasIsMine" width="${n}" height="${n}" s
 var c=document.getElementById("canvasIsMine"); 
 c.style.position="fixed"; 
 var x=c.getContext("2d");
-//snek color "#1dd1a1";
-//fruit color "#feca57";
-//s.forEach((e) => {x.fillRect(e[0], e[1],m,m);});
-
-
 
 document.body.addEventListener("keydown",(e)=>{
     if(e.key=="ArrowLeft"||e.key=="a"){d=[-m,0];}

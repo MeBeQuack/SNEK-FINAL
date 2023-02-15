@@ -15,26 +15,27 @@ document.body.addEventListener("keydown",(e)=>{
     if(e.key=="ArrowLeft"||e.key=="a"){d=[-m,0];}
     if(e.key=="ArrowRight"||e.key=="d"){d=[m,0];}
     if(e.key=="ArrowUp"||e.key=="w"){d=[0,-m];}
-    if(e.key=="ArrowDown"){d=[0,m];}
+    if(e.key=="ArrowDown"||e.key=="s"){d=[0,m];}
 });
 var f=F();
 
 function D(){
-    document.title=Math.floor(l*(t/100));
+    document.title=`Total score: ${Math.floor(l*(t/80))}!`;
     c.remove();
 }
 function G(){
     l+=m;
+    
 }
 function S(){
-    x.fillStyle="#009432";
     p=[p[0]+d[0],p[1]+d[1]];
     if (s.includes(p)||p[0]>n||p[1]>n||p[0]<0||p[1]<0)return D();
     if(f[0]===p[0]&&f[1]===p[1])G();
     s.push([p]);
+    x.fillStyle="#009432";
     x.fillRect(p[0],p[1],m,m);
     if(s.length>l){let g=s.shift()[0];x.clearRect(g[0],g[1],m,m);}
-    document.title=l*(t/100);
+    document.title=l*(t/80);
     t++;
     var v=setTimeout((e)=>{
         requestAnimationFrame(S);

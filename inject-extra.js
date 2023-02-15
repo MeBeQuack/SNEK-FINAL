@@ -21,7 +21,7 @@ document.body.addEventListener("keydown",(e)=>{   //runs this arrow function whe
 
 
 function D(){   //this function is triggered uppon death conditions are met
-    document.title=Math.floor(l*(t/100)); //sets the title of the page to the score
+    document.title=`Total score: ${Math.floor(l*(t/80))}!` //sets the title of the page to the score -uses ` and ${} to easier format a string
     c.remove(); //deletes the canvas.
 }
 function G(){ //this function is triggered uppon the snek "eating" a fruit
@@ -38,7 +38,7 @@ function S(){
     x.fillRect(p[0],p[1],m,m);  //draws the head of the snake
     if(s.length>l){let g=s.shift()[0];x.clearRect(g[0],g[1],m,m);} //IF the snake is longer than it should be, it's tail is cut off
                                                 //(The first element in the list is removed, and the position it was on is erased from the canvas)
-    document.title=l*(t/100); //sets the title of the "tab" to be the score
+    document.title=l*(t/80); //sets the title of the "tab" to be the score
     t++;    //increments the number of iterations
     var v=setTimeout((e)=>{requestAnimationFrame(S);},80) //Runs the whole FUNCTION again after 80ms
 }
@@ -49,5 +49,5 @@ function F(){ //generates a random x and y for the "fruit"
     return f; //returns that positon to set a variable defined above
 }
 
-S();
-void(0);
+S();    //!!MOST IMPORTANT!! calls the main snake function (first, since the function has to be triggered before it can run itself again).
+void(0);    //Just to fix some bugs for later, when converting to bookmarklets (one continuous line of code prefixed "javascript:")

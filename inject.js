@@ -9,6 +9,7 @@ var dl=[-m,t];
 var dr=[m,t];
 var d=[t,-m];
 var s=[p];
+var f=F();
 var j = prompt("tab prefix")
 
 document.body.innerHTML+=`<canvas id="canvasIsMine" width="${n}" height="${n}" style="top:0;left:0;border:none;">c</canvas>`; 
@@ -22,7 +23,6 @@ document.body.addEventListener("keydown",(e)=>{
     if(d!=dd&&(e.key=="ArrowUp"||e.key=="w")){d=du;}
     if(d!=du&&(e.key=="ArrowDown"||e.key=="s")){d=dd;}
 });
-var f=F();
 
 function D(){
     document.title= j +` ${l} : ${Math.floor(t*100/8)/100}`;
